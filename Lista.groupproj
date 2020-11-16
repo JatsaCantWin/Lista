@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5EAB7DED-1A26-4BED-B8BE-94D408497BDE}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ListaServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ListaClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ListaServer">
+        <MSBuild Projects="ListaServer.dproj"/>
+    </Target>
+    <Target Name="ListaServer:Clean">
+        <MSBuild Projects="ListaServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ListaServer:Make">
+        <MSBuild Projects="ListaServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ListaClient">
+        <MSBuild Projects="ListaClient.dproj"/>
+    </Target>
+    <Target Name="ListaClient:Clean">
+        <MSBuild Projects="ListaClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ListaClient:Make">
+        <MSBuild Projects="ListaClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ListaServer;ListaClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ListaServer:Clean;ListaClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ListaServer:Make;ListaClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
