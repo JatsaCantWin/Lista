@@ -1,12 +1,9 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{5EAB7DED-1A26-4BED-B8BE-94D408497BDE}</ProjectGuid>
+        <ProjectGuid>{AA3A4B1B-24A6-4C1C-8AB8-678623610F57}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
         <Projects Include="ListaServer.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="ListaClient.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -26,23 +23,14 @@
     <Target Name="ListaServer:Make">
         <MSBuild Projects="ListaServer.dproj" Targets="Make"/>
     </Target>
-    <Target Name="ListaClient">
-        <MSBuild Projects="ListaClient.dproj"/>
-    </Target>
-    <Target Name="ListaClient:Clean">
-        <MSBuild Projects="ListaClient.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="ListaClient:Make">
-        <MSBuild Projects="ListaClient.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="ListaServer;ListaClient"/>
+        <CallTarget Targets="ListaServer"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ListaServer:Clean;ListaClient:Clean"/>
+        <CallTarget Targets="ListaServer:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ListaServer:Make;ListaClient:Make"/>
+        <CallTarget Targets="ListaServer:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

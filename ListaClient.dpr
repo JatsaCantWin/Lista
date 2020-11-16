@@ -1,14 +1,14 @@
 program ListaClient;
 
 uses
-  System.StartUpCopy,
-  FMX.Forms,
-  UClient in 'UClient.pas' {FormClient};
+  Vcl.Forms,
+  UClient in 'UClient.pas' {Form1};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TFormClient, FormClient);
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.

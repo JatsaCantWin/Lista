@@ -1,14 +1,14 @@
 program ListaServer;
 
 uses
-  System.StartUpCopy,
-  FMX.Forms,
+  Vcl.Forms,
   UServer in 'UServer.pas' {FormServer};
 
 {$R *.res}
 
 begin
   Application.Initialize;
+  Application.MainFormOnTaskbar := True;
   Application.CreateForm(TFormServer, FormServer);
   Application.Run;
 end.
