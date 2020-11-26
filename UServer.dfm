@@ -19,6 +19,7 @@ object FormServer: TFormServer
     Active = False
     Port = 0
     ServerType = stNonBlocking
+    OnClientConnect = ServerSocketClientConnect
     OnClientRead = ServerSocketClientRead
     Left = 584
     Top = 248

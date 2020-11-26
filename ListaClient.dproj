@@ -99,8 +99,18 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="UClient.pas">
-            <Form>Form1</Form>
+            <Form>FormClient</Form>
             <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="ULogin.pas">
+            <Form>FrameLogin</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="UChoice.pas">
+            <Form>FrameChoice</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

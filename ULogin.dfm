@@ -8,7 +8,7 @@ object FrameLogin: TFrameLogin
     250
     340)
   object LabeledEditIP: TLabeledEdit
-    Left = 65
+    Left = 57
     Top = 48
     Width = 120
     Height = 21
@@ -20,7 +20,7 @@ object FrameLogin: TFrameLogin
     Text = 'localhost'
   end
   object LabeledEditPort: TLabeledEdit
-    Left = 65
+    Left = 57
     Top = 93
     Width = 120
     Height = 21
@@ -33,7 +33,7 @@ object FrameLogin: TFrameLogin
     Text = '10131'
   end
   object ButtonConnect: TButton
-    Left = 87
+    Left = 79
     Top = 128
     Width = 75
     Height = 25
